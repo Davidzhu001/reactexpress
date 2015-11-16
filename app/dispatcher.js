@@ -5,14 +5,13 @@ var listeners = {};
 module.exports = {
 	register:function(cb){
 		var id = guid.raw();
-		listeners[id] = callback;
+		listeners[id] = cb;
 		return id;
 	},
 	dispatch:function(payload){
-		console.info("dispatching.....", payload)
 		for (var id in listeners) {
-			var listeners = listeners[id];
-			listeners(payload);
+			var listener = listeners[id];
+			listener(payload);
 
 		}
 	}

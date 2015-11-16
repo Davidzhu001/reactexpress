@@ -12,7 +12,6 @@ module.exports = React.createClass({
 	},
 	addItem:function(e) {
 		e.preventDefault();
-		console.log("addItem", this.state.input);
 		action.add({
 			name:this.state.input
 
